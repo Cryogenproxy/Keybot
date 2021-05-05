@@ -18,9 +18,9 @@ async def ping(ctx):
 @client.command()
 async def skynet():
     await client.send_message(message.channel, 'Execute Y/N?')
-    
-    @asyncio.coroutine
-  async def delete_messages(messages):
+
+@asyncio.coroutine
+async def delete_messages(messages):
     if message.content == 'Y':
         await client.delete_messages()
 
