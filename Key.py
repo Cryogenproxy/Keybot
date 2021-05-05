@@ -25,7 +25,13 @@ async def Help(ctx):
     
     $-help bring up help Menu 
     $-Ping for Testing Bot Response
+    $-Purge Deletes groups of Messages
     """)
+
+@client.command()
+async def Purge():
+    value = 10
+    await ctx.message.delete(value)
 
 keep_alive()
 client.run(TOKEN)
