@@ -26,6 +26,6 @@ async def on_message(message):
 @asyncio.coroutine
 async def delete_messages(messages):
     if message.content == 'Y':
-        await client.delete_messages()
-        
+        await message.delete_messages()
+
 client.run(TOKEN)
