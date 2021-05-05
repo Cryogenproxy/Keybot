@@ -1,7 +1,7 @@
 import discord
 import os 
 from discord.ext import commands
-
+import asyncio
 
 TOKEN = os.environ['TOKEN']
 client = discord.Client()
@@ -14,4 +14,14 @@ async def on_ready():
 @client.command()
 async def ping(ctx):
     await ctx.send("pong You been Hacked Bitch")
+
+@client.command()
+async def skynet():
+    await client.send_message(message.channel, 'Execute Y/N?')
+    
+    @asyncio.coroutine
+  async def delete_messages(messages):
+    if message.content == 'Y':
+        await client.delete_messages()
+
 client.run(TOKEN)
