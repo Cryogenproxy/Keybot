@@ -29,7 +29,7 @@ async def Help(ctx):
     """)
 
 @client.command()
-async def Purge():
+async def Purge(ctx):
     value = 10
     await ctx.message.delete(value)
 
