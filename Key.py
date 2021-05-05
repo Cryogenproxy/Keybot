@@ -21,10 +21,11 @@ async def on_message(message):
 
 async def on_message(message):
     if message.content == 'skynet':
-        await client.send_message(message.channel, 'Execute Y/N?')
+        await message.channel.send('Execute Y/N?')
 
 @asyncio.coroutine
 async def delete_messages(messages):
     if message.content == 'Y':
         await client.delete_messages()
+        
 client.run(TOKEN)
