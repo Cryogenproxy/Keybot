@@ -1,6 +1,8 @@
 import discord
 import os 
-from discord.ext import commands
+from discord.ext import 
+import webserver
+from webserver import keep_alive
 import asyncio
 
 TOKEN = os.environ['TOKEN']
@@ -25,5 +27,5 @@ async def Help(ctx):
     $-Ping for Testing Bot Response
     """)
 
-
+keep_alive()
 client.run(TOKEN)
