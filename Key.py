@@ -1,5 +1,6 @@
 import discord
 import os 
+import asyncio
 
 TOKEN = os.environ['TOKEN']
 client = discord.Client()
@@ -18,12 +19,12 @@ async def on_message(message):
 
 @client.event
 
-  async def on_message(message):
+async def on_message(message):
     if message.content == 'skynet':
         await client.send_message(message.channel, 'Execute Y/N?')
 
 @asyncio.coroutine
-  async def delete_messages(messages):
+async def delete_messages(messages):
     if message.content == 'Y':
         await client.delete_messages()
 client.run(TOKEN)
