@@ -30,8 +30,7 @@ async def Help(ctx):
 
 @client.command()
 async def Purge(ctx):
-    value = 10
-    await ctx.message.delete(value)
+    await ctx.message.delete(20)
 
 keep_alive()
 client.run(TOKEN)
