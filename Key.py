@@ -19,7 +19,7 @@ async def ping(ctx):
 @client.command()
 async def Help(ctx):
     await ctx.message.delete()
-    await ctx.send("""\ 
+    await ctx.send("""
     
     $-help bring up help Menu 
     $-Ping for Testing Bot Response
