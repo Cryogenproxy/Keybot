@@ -5,7 +5,7 @@ import asyncio
 
 TOKEN = os.environ['TOKEN']
 client = discord.Client()
-client = commands.Bot(comma_prefix = '$')
+client = commands.Bot(command_prefix = '$')
 
 @client.event
 async def on_ready():
