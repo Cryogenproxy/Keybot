@@ -22,12 +22,17 @@ async def on_disconnect():
 async def on_member_join():
     await message.send.channel('Welcome Please read our rules, in #rules')
 
-@client.command
-async def Version():
-    versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=grey)
-    versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
-    versionEmbed.add_field(name="Release Date:", "May 6th, 2021", inline=False)
-    await ctx.send(embed=VersionEmbed)
+@client.event
+async def on_message(message):
+  if message.content == '$Version':
+
+      versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=grey)
+
+      versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
+
+      versionEmbed.add_field(name="Release Date:", "May 6th, 2021", inline=False)
+      
+      await ctx.send(embed=VersionEmbed)
 
 @client.command
 async def joined(ctx, *, member: discord.Member):
