@@ -22,7 +22,7 @@ async def on_disconnect():
 
 @client.command(name='Version')
 async def Version(context):
-  
+    await ctx.message.delete()
     versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=0x10a13)
 
     versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
