@@ -28,25 +28,11 @@ async def Help(ctx):
     $-Purge Deletes groups of Messages
     """)
 
+@client.event
+async def on_disconnect():
+    annoucment_channel = client.get_channel(697670402863792138)
+    await annoucment_channel.send("Discord Bot Update, In Progress I will be Offline for a bit.")
 
-@client.command(pass_context=True)
-@commands.has_role("Moderation")
-async def Mute(ctx, user: discord.Member):
-    role = discord.utils.find(lambda r: r.name == 'Member', ctx.message.guild.roles)
-    if role in user.roles:
-        await client.say("{} is Muted".format(user))
-    else:
-        await client.add_roles(user, role)
-
-
-@client.command(pass_context=True)
-@commands.has_role("Moderation")
-async def unmute(ctx, user: discord.Member):
-    role = discord.utils.find(lambda r: r.name == 'Member', ctx.message.guild.roles)
-    if role in user.roles:
-        await client.say("{} is not muted".format(user))
-    else:
-        await client.add_roles(user, role)
 
 
 keep_alive()
