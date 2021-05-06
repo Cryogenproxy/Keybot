@@ -19,7 +19,7 @@ async def on_disconnect():
     await annoucment_channel.send("Discord Bot Update, In Progress I will be Offline for a bit.")
 
 @client.event
-async def on_member_join(member):
+async def discord.on_member_join(member):
     join_channel= client.get_channel(839766015034654731)
 
     joinEmbed = discord.Embed(title="USER JOINED: ", description="user has Joined the Server", color=0x424554)
@@ -30,17 +30,16 @@ async def on_member_join(member):
 
     await join_channel.send(embed=joinEmbed)
 
-@client.event
-async def on_message(message):
-  if message.content == '$Version':
+@client.command(name='Version')
+async def Version(context):
+  
+    versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=0x10a13)
 
-      versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=0x10a13)
+    versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
 
-      versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
+    versionEmbed.add_field(name="Release Date:", value="May 6th, 2021", inline=False)
 
-      versionEmbed.add_field(name="Release Date:", value="May 6th, 2021", inline=False)
-
-      await ctx.send(embed=versionEmbed)
+    await context.message.channel.send(embed=versionEmbed)
 
 @client.command
 async def joined(ctx, *, member: discord.Member):
