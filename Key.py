@@ -29,24 +29,24 @@ async def Help(ctx):
     """)
 
 @client.command()
-@bot.command(pass_context=True)
+@client.command(pass_context=True)
 @commands.has_role("Moderation")
 async def Mute(ctx, user: discord.Member):
     role = discord.utils.find(lambda r: r.name == 'Member', ctx.message.guild.roles)
     if role in user.roles:
-        await bot.say("{} is Muted".format(user))
+        await client.say("{} is Muted".format(user))
     else:
-        await bot.add_roles(user, role)
+        await client.add_roles(user, role)
 
 @client.command()
-@bot.command(pass_context=True)
+@client.command(pass_context=True)
 @commands.has_role("Moderation")
 async def unmute(ctx, user: discord.Member):
     role = discord.utils.find(lambda r: r.name == 'Member', ctx.message.guild.roles)
     if role in user.roles:
-        await bot.say("{} is not muted".format(user))
+        await client.say("{} is not muted".format(user))
     else:
-        await bot.add_roles(user, role)
+        await client.add_roles(user, role)
 
 
 keep_alive()
