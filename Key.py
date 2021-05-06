@@ -31,8 +31,8 @@ async def on_message(message):
       versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
 
       versionEmbed.add_field(name="Release Date:", "May 6th, 2021", inline=False)
-      
-      await ctx.send(embed=VersionEmbed)
+
+      await ctx.send(embed=versionEmbed)
 
 @client.command
 async def joined(ctx, *, member: discord.Member):
