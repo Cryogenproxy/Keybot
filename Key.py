@@ -48,11 +48,6 @@ async def unmute(ctx, user: discord.Member):
     else:
         await bot.add_roles(user, role)
 
-@client.command()
-async def Purge(ctx):
-    general_channel = client.get_channel(721434309310808116)
-
-    if message.author.has_role
 
 keep_alive()
 client.run(TOKEN)
