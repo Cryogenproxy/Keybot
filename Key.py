@@ -26,7 +26,7 @@ async def on_member_join():
 async def on_message(message):
   if message.content == '$Version':
 
-      versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=010a13)
+      versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=0x010a13)
 
       versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
 
