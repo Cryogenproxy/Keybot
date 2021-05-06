@@ -18,9 +18,9 @@ async def on_disconnect():
     annoucment_channel = client.get_channel(697670402863792138)
     await annoucment_channel.send("Discord Bot Update, In Progress I will be Offline for a bit.")
 @client.event
-async def on_member.join():
+async def on_member_join():
     await message.send.channel('Welcome Please read our rules, in #rules')
-    
+
 @client.command
 async def whois(ctx, *, member: discord.Member):
     await ctx.send('This user Account joined at this Time')
