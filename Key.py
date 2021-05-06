@@ -19,7 +19,7 @@ async def on_disconnect():
     await annoucment_channel.send("Discord Bot Update, In Progress I will be Offline for a bit.")
 
 @client.event
-async def on_member_join():
+async def on_member_join(member):
     join_channel= client.get_channel(839766015034654731)
 
     joinEmbed = discord.Embed(title="USER JOINED: ", description="user has Joined the Server", color=0x424554)
