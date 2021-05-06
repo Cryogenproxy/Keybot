@@ -28,7 +28,7 @@ async def Help(ctx):
     $-Purge Deletes groups of Messages
     """)
 
-@client.command()
+
 @client.command(pass_context=True)
 @commands.has_role("Moderation")
 async def Mute(ctx, user: discord.Member):
@@ -38,7 +38,7 @@ async def Mute(ctx, user: discord.Member):
     else:
         await client.add_roles(user, role)
 
-@client.command()
+
 @client.command(pass_context=True)
 @commands.has_role("Moderation")
 async def unmute(ctx, user: discord.Member):
