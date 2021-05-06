@@ -18,17 +18,7 @@ async def on_disconnect():
     annoucment_channel = client.get_channel(697670402863792138)
     await annoucment_channel.send("Discord Bot Update, In Progress I will be Offline for a bit.")
 
-@client.event
-async def discord.on_member_join(member):
-    join_channel= client.get_channel(839766015034654731)
 
-    joinEmbed = discord.Embed(title="USER JOINED: ", description="user has Joined the Server", color=0x424554)
-
-    joinEmbed.add_field(name="Welcome", value="guild.user, Please read our #rules", inline=False)
-
-    joinEmbed.add_field(name="Server Welcome: ", value="Welcome to Anonymous Server one of the Many Anonymous Collectives, and cells out there. Reminder There is no Charter, no way to join, you declare yourself Anonymous or you don't.", inline=False)
-
-    await join_channel.send(embed=joinEmbed)
 
 @client.command(name='Version')
 async def Version(context):
