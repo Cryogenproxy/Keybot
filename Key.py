@@ -26,7 +26,7 @@ async def on_member_join():
 async def Version():
     versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=grey)
     versionEmbed.add_field(name='Keybot Version', value='vA.1.0.0', inline=True)
-    versionEmbed.add_field(name='Release Date:', 'May 6th, 2021', inline=True)
+    versionEmbed.add_field(name='Release Date', 'May 6th, 2021', inline=True)
     await ctx.send(embed=VersionEmbed)
 
 @client.command
