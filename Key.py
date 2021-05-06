@@ -20,19 +20,27 @@ async def on_disconnect():
 
 @client.event
 async def on_member_join():
-    await message.send.channel('Welcome Please read our rules, in #rules')
+    join_channel= client.get_channel(839766015034654731)
+
+    joinEmbed = discord.Embed(title="USER JOINED: ", description="user has Joined the Server", color=0x424554)
+
+    joinEmbed.add_field(name="Welcome", value="guild.user, Please read our #rules", inline=False)
+
+    joinEmbed.add_field(name="Server Welcome: ", value="Welcome to Anonymous Server one of the Many Anonymous Collectives, and cells out there. Reminder There is no Charter, no way to join, you declare yourself Anonymous or you don't.", inline=False)
+
+    await join_channel.send(embed=joinEmbed)
 
 @client.event
 async def on_message(message):
   if message.content == '$Version':
 
-      versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=0x010a13)
+      versionEmbed = discord.Embed(title="Current Version", description="Keybot is in Alpha 1.0", color=010a13)
 
       versionEmbed.add_field(name="Keybot Version", value="vA.1.0.0", inline=False)
 
       versionEmbed.add_field(name="Release Date:", value="May 6th, 2021", inline=False)
 
-      await message.channel.send(embed=versionEmbed)
+      await ctx.send(embed=versionEmbed)
 
 @client.command
 async def joined(ctx, *, member: discord.Member):
