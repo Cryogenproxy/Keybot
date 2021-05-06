@@ -32,7 +32,7 @@ async def on_message(message):
 
       versionEmbed.add_field(name="Release Date:", value="May 6th, 2021", inline=False)
 
-      await message.send(embed=versionEmbed)
+      await message.channel.send(embed=versionEmbed)
 
 @client.command
 async def joined(ctx, *, member: discord.Member):
