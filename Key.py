@@ -29,8 +29,30 @@ async def Help(ctx):
     """)
 
 @client.command()
+@bot.command(pass_context=True)
+@commands.has_role("Moderation")
+async def Mute(ctx, user: discord.Member):
+    role = discord.utils.find(lambda r: r.name == 'Member', ctx.message.guild.roles)
+    if role in user.roles:
+        await bot.say("{} is Muted".format(user))
+    else:
+        await bot.add_roles(user, role)
+
+@client.command()
+@bot.command(pass_context=True)
+@commands.has_role("Moderation")
+async def unmute(ctx, user: discord.Member):
+    role = discord.utils.find(lambda r: r.name == 'Member', ctx.message.guild.roles)
+    if role in user.roles:
+        await bot.say("{} is not muted".format(user))
+    else:
+        await bot.add_roles(user, role)
+
+@client.command()
 async def Purge(ctx):
-    await ctx.message.delete(20)
+    general_channel = client.get_channel(721434309310808116)
+
+    if message.author.has_role
 
 keep_alive()
 client.run(TOKEN)
